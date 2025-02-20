@@ -62,7 +62,7 @@ export default function HomePage() {
       setLoading(true)
       const response = await fetch("/api/boxes");
       const data = await response.json();
-      setBoxes(data.boxes);}
+      setBoxes(data);}
       catch(error){
         console.error("Error fetching shareable link:", error);
         return null;
