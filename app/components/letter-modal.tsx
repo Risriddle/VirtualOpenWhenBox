@@ -183,7 +183,18 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, onClose }) => {
                 {letter.title}
                 <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-3/4 h-px bg-[#3a2518] opacity-30" />
               </h2>
+              <p 
+                // className="font-handwriting text-xl text-[#3a2518] leading-relaxed whitespace-pre-wrap tracking-wide"
+                className="font-serif text-xl text-[#3a2518] leading-relaxed whitespace-pre-wrap tracking-wide italic"
 
+                style={{
+                  textShadow: '0 1px 2px rgba(255,255,255,0.6)'
+                }}
+              >
+    
+
+                {letter.message}
+              </p>
             
   {letter.imageUrls && letter.imageUrls.length > 1 ? (
   <ImageSlider images={letter.imageUrls} />
@@ -197,16 +208,7 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, onClose }) => {
  
 
 ) : null}
-              <p 
-                className="font-handwriting text-xl text-[#3a2518] leading-relaxed whitespace-pre-wrap tracking-wide italic"
-                style={{
-                  textShadow: '0 1px 2px rgba(255,255,255,0.6)'
-                }}
-              >
-    
-
-                {letter.message}
-              </p>
+             
             </div>
           </div>
         </motion.div>
