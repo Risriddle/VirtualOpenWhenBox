@@ -50,7 +50,7 @@ export default function SendVirtualBox() {
   useEffect(() => {
     
     fetchLetters()
-  }, [fetchLetters])
+  }, [])
 
   
 
