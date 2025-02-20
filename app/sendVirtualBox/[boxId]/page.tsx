@@ -78,7 +78,8 @@ export default function SendVirtualBox() {
   return (
     // <div className="min-h-screen bg-gradient-to-b from-amber-50 to-amber-50">
     // <div className="min-h-screen  from-amber-100 to-amber-50 py-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
-   <div className="min-h-screen  from-amber-100 to-amber-50 py-8 px-4 sm:px-6 lg:px-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
+  //  <div className="min-h-screen  from-amber-100 to-amber-50 py-8 px-4 sm:px-6 lg:px-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
+<div className="min-h-screen px-4 sm:px-6 lg:px-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat overflow-auto">
 
       <AnimatePresence>{showConfetti && <Confetti width={width} height={height} recycle={false} />}</AnimatePresence>
 
@@ -105,6 +106,7 @@ export default function SendVirtualBox() {
                 className="p-2 pl-10 border border-amber-300 rounded-lg w-full"
               />
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-amber-600" />
+
             </div>
           </div>
         )}
@@ -116,12 +118,17 @@ export default function SendVirtualBox() {
         ) : (
           isBoxComplete && (
             <>
-              <Button
+              {/* <Button
                 onClick={handleRandomLetter}
                 // className="bg-amber-600 hover:bg-amber-700 text-white rounded-full px-6 py-2 flex items-center gap-2 mx-auto mb-8"
                className="bg-amber-600 hover:bg-amber-700 text-white rounded-full px-6 py-2 flex flex-col sm:flex-row items-center gap-2 mx-auto mb-8"
 
-             >
+             > */}
+             <Button
+  onClick={handleRandomLetter}
+  className="bg-amber-600 hover:bg-amber-700 text-white rounded-full px-6 py-2 flex flex-wrap justify-center items-center gap-2 mx-auto mb-8"
+>
+
                 <Sparkles className="w-4 h-4" />
                 Pick Random Letter
               </Button>
