@@ -77,23 +77,25 @@ export default function SendVirtualBox() {
 
   return (
     // <div className="min-h-screen bg-gradient-to-b from-amber-50 to-amber-50">
-    <div className="min-h-screen  from-amber-100 to-amber-50 py-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
+    // <div className="min-h-screen  from-amber-100 to-amber-50 py-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
+   <div className="min-h-screen  from-amber-100 to-amber-50 py-8 px-4 sm:px-6 lg:px-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
 
       <AnimatePresence>{showConfetti && <Confetti width={width} height={height} recycle={false} />}</AnimatePresence>
 
      
 
-
-
       <main className="container mx-auto px-4 py-8">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-serif text-amber-900 mb-4">Virtual Open When Box for {boxFor}</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-amber-900 mb-4">
+        Virtual Open When Box for {boxFor}</h1>
           <p className="text-lg text-amber-800 mb-8">A box of love letters, just for you 💌</p>
         </motion.div>
 
         {isBoxComplete && (
           <div className="mb-8 text-center relative">
-            <div className="relative w-1/2 mx-auto">
+            {/* <div className="relative w-1/2 mx-auto"> */}
+            <div className="relative w-full sm:w-2/3 md:w-1/2 mx-auto">
+
               <Input
                 type="text"
                 placeholder="Open when..."
@@ -116,15 +118,19 @@ export default function SendVirtualBox() {
             <>
               <Button
                 onClick={handleRandomLetter}
-                className="bg-amber-600 hover:bg-amber-700 text-white rounded-full px-6 py-2 flex items-center gap-2 mx-auto mb-8"
-              >
+                // className="bg-amber-600 hover:bg-amber-700 text-white rounded-full px-6 py-2 flex items-center gap-2 mx-auto mb-8"
+               className="bg-amber-600 hover:bg-amber-700 text-white rounded-full px-6 py-2 flex flex-col sm:flex-row items-center gap-2 mx-auto mb-8"
+
+             >
                 <Sparkles className="w-4 h-4" />
                 Pick Random Letter
               </Button>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4">
               <EnvelopeList
                 letters={letters.filter(letter => letter.title.toLowerCase().includes(searchQuery.toLowerCase()))}
                 onSelect={handleLetterSelect}
               />
+              </div>
             </>
           )
         )}
