@@ -237,8 +237,12 @@ export default function VirtualBox() {
         </motion.div>
 
         <div className="space-y-6">
-          <div className="flex justify-between items-center bg-white/60 p-4 rounded-lg backdrop-blur-sm shadow-sm">
-            <div className="flex gap-4">
+          {/* <div className="flex justify-between items-center bg-white/60 p-4 rounded-lg backdrop-blur-sm shadow-sm"> */}
+          <div className="flex flex-wrap justify-between items-center bg-white/60 p-4 rounded-lg backdrop-blur-sm shadow-sm gap-2 md:gap-4">
+
+            {/* <div className="flex gap-4"> */}
+            <div className="flex flex-col md:flex-row gap-2">
+
               <Button
                 onClick={handleCreateLetter}
                 className="bg-amber-700 hover:bg-amber-800 text-white flex items-center gap-2"
@@ -253,7 +257,8 @@ export default function VirtualBox() {
                 <Home className="w-4 h-4 mr-2" /> Return Home
               </Button>
             </div>
-            <div className="relative w-1/3">
+            <div className="relative w-full md:w-1/3">
+
               <Input
                 type="text"
                 placeholder="Search your letters..."
@@ -274,7 +279,9 @@ export default function VirtualBox() {
               </div>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 gap-6">
+            // <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
               {letters
                 .filter((letter) =>
                   letter.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -326,7 +333,9 @@ export default function VirtualBox() {
         )}
 
       {/* Scrollable Content */}
-<div className="px-4 py-2 bg-white/60 rounded-lg overflow-auto" style={{ maxHeight: "300px" }}>
+{/* <div className="px-4 py-2 bg-white/60 rounded-lg overflow-auto" style={{ maxHeight: "300px" }}> */}
+<div className="px-4 py-2 bg-white/60 rounded-lg overflow-auto max-h-[40vh] sm:max-h-[300px]">
+
   <p className="text-amber-900 whitespace-pre-wrap font-serif leading-relaxed">
     {viewingLetter?.message}
   </p>
