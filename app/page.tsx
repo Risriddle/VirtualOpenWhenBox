@@ -354,7 +354,7 @@ export default function HomePage() {
             </DialogHeader>
             <Alert variant="destructive">
               <AlertDescription>
-                Are you sure you want to delete "{boxToDelete?.boxfor}"? This
+                Are you sure you want to delete &quot;{boxToDelete?.boxfor}&quot;? This
                 action cannot be undone.
               </AlertDescription>
             </Alert>

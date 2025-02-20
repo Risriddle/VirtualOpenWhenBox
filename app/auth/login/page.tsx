@@ -63,7 +63,7 @@ export default function AuthPage() {
         </form>
 
         <p className="text-center text-sm text-[#8b7355] mt-4">
-          Don't have an account?{" "}
+          Do not have an account?{" "}
           <a href="/auth/signup" className="text-[#d4a373] underline">
             Sign up
           </a>
