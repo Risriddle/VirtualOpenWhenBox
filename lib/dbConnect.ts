@@ -17,7 +17,7 @@ const dbConnect = async () => {
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    console.log("Mongoose Import:===========================================", mongoose); // Debugging
+    console.log("Mongoose Import:==========================================="); // Debugging
 
     cached.promise = mongoose
       .connect(MONGODB_URI, {

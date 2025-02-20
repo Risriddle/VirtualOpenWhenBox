@@ -14,8 +14,10 @@ export async function DELETE(req: NextRequest, { params }: { params: { boxId: st
 
 export async function PUT(req: NextRequest, { params }: { params: { boxId: string } }) {
     try {
-        const { boxfor } = await req.json();
+       
+
         await dbConnect();
+        const { boxfor } = await req.json();
         const updatedBox = await Box.findByIdAndUpdate(params.boxId, { boxfor }, { new: true });
 
         if (!updatedBox) {
