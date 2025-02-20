@@ -5,7 +5,13 @@ export async function GET(req:NextRequest, context: { params?: { boxId?: string 
   try {
    
     const  boxId  = context.params?.boxId;
-      const baseUrl = process.env.NEXT_PUBLIC_CLIENT_URL || "http://localhost:3000";
+    if (!boxId) {
+      return NextResponse.json({ success: false, message: "Missing boxId" }, { status: 400 });
+    }
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:3000";
+
       const shareLink = `${baseUrl}/sendVirtualBox/${boxId}`;
   
       return NextResponse.json({ success: true, shareLink }, { status: 200 });
