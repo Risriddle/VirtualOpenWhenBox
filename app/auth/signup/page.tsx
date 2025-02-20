@@ -4,6 +4,8 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Mail, Lock, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input";
+
 
 export default function SignUpPage() {
   const [name, setName] = useState("")
@@ -34,7 +36,7 @@ export default function SignUpPage() {
           {/* Name Input */}
           <div className="relative">
             <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#8b7355]" />
-            <input
+            <Input
               type="text"
               placeholder="Your Name"
               value={name}
@@ -46,7 +48,7 @@ export default function SignUpPage() {
           {/* Email Input */}
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#8b7355]" />
-            <input
+            <Input
               type="email"
               placeholder="Your Email"
               value={email}
@@ -58,7 +60,7 @@ export default function SignUpPage() {
           {/* Password Input */}
           <div className="relative">
             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#8b7355]" />
-            <input
+            <Input
               type="password"
               placeholder="Create a Password"
               value={password}

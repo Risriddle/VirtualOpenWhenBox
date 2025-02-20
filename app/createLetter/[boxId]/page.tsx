@@ -7,6 +7,9 @@ import { Button } from '@/components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useParams, useRouter } from "next/navigation"
+import Image from "next/image";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 interface LetterFormData {
   title: string
@@ -216,7 +219,7 @@ export default function CreateLetterPage() {
 
           <div className="relative p-8 z-10">
             <form onSubmit={handleCreateLetter} className="space-y-6">
-              <input
+              <Input
                 id="title"
                 name="title"
                 type="text"
@@ -232,7 +235,7 @@ export default function CreateLetterPage() {
               />
 
               <div className="relative h-[500px] overflow-hidden">
-                <textarea
+                <Textarea
                   id="message"
                   name="message"
                   value={formData.message}
@@ -264,7 +267,7 @@ export default function CreateLetterPage() {
                 <label htmlFor="file-upload" className="cursor-pointer font-serif hover:text-[#8b4513] transition-colors">
                   Attach Memories
                 </label>
-                <input
+                <Input
                   id="file-upload"
                   type="file"
                   accept="image/*"
@@ -304,7 +307,7 @@ export default function CreateLetterPage() {
                       className="relative transform rotate-1"
                     >
                       <div className="relative rounded-lg overflow-hidden shadow-lg group">
-                        <img
+                        <Image
                           src={image}
                           alt={`Attached ${index + 1}`}
                           className="max-w-full h-48 object-cover opacity-85 mix-blend-multiply"

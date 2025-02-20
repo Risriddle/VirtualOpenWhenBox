@@ -10,6 +10,8 @@ import { Button } from "@/components/ui/button"
 import Confetti from "react-confetti"
 import useWindowSize from "@/app/hooks/use-window-size"
 import { useParams } from "next/navigation"
+import { Input } from "@/components/ui/input";
+
 
 export interface Letter {
   _id: string
@@ -29,24 +31,28 @@ export default function SendVirtualBox() {
   const [isLoading, setIsLoading] = useState(true) // Loading state
   const[boxFor,setBoxfor]=useState("")
 
-  useEffect(() => {
-    const fetchLetters = async () => {
-      try {
-        setIsLoading(true) // Start loading
-        const res = await fetch(`/api/box/${boxId}`)
-        if (!res.ok) throw new Error('Failed to fetch letters')
-        const data = await res.json()
-      console.log(data,"data from api")
-      setBoxfor(data.box.boxfor)
-        setLetters(data?.letterDocs)
-      } catch (error) {
-        console.error(error)
-      } finally {
-        setIsLoading(false) // Stop loading
-      }
+  const fetchLetters = async () => {
+    try {
+      setIsLoading(true) // Start loading
+      const res = await fetch(`/api/box/${boxId}`)
+      if (!res.ok) throw new Error('Failed to fetch letters')
+      const data = await res.json()
+    console.log(data,"data from api")
+    setBoxfor(data.box.boxfor)
+      setLetters(data?.letterDocs)
+    } catch (error) {
+      console.error(error)
+    } finally {
+      setIsLoading(false) // Stop loading
     }
+  }
+
+  useEffect(() => {
+    
     fetchLetters()
-  }, [])
+  }, [fetchLetters])
+
+  
 
   const handleLetterSelect = (letter: Letter) => {
     setSelectedLetter(letter)
@@ -88,7 +94,7 @@ export default function SendVirtualBox() {
         {isBoxComplete && (
           <div className="mb-8 text-center relative">
             <div className="relative w-1/2 mx-auto">
-              <input
+              <Input
                 type="text"
                 placeholder="Open when..."
                 autoFocus

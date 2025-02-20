@@ -3,6 +3,7 @@ import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 interface ImageSliderProps {
   images: string[]; // Ensure images is an array of strings (URLs)
@@ -27,7 +28,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
       <Slider ref={sliderRef} {...settings}>
         {images.map((image, index) => (
           <div key={index} className="w-full relative">
-            <img
+            <Image
               src={image}
               alt={`Image ${index + 1}`}
               className="w-full h-auto object-cover rounded-lg shadow-lg transition-all duration-300 ease-in-out"

@@ -4,6 +4,8 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Lock, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input";
+
 
 export default function AuthPage() {
   const [email, setEmail] = useState("")
@@ -33,7 +35,7 @@ export default function AuthPage() {
           {/* Email Input */}
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#8b7355]" />
-            <input
+            <Input
               type="email"
               placeholder="Your Email"
               value={email}
@@ -45,7 +47,7 @@ export default function AuthPage() {
           {/* Password Input */}
           <div className="relative">
             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#8b7355]" />
-            <input
+            <Input
               type="password"
               placeholder="Your Password"
               value={password}

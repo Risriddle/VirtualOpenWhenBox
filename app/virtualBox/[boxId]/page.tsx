@@ -4,6 +4,7 @@
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -253,7 +254,7 @@ export default function VirtualBox() {
               </Button>
             </div>
             <div className="relative w-1/3">
-              <input
+              <Input
                 type="text"
                 placeholder="Search your letters..."
                 value={searchQuery}
@@ -313,7 +314,7 @@ export default function VirtualBox() {
             >
               {viewingLetter.imageUrls.map((imgUrl, index) => (
                 <SwiperSlide key={index}>
-                  <img
+                  <Image
                     src={imgUrl}
                     alt={`Letter Image ${index + 1}`}
                     className="w-full h-[250px] object-contain rounded-lg"
@@ -380,7 +381,7 @@ export default function VirtualBox() {
           <div className="flex flex-wrap gap-2">
             {selectedLetter.imageUrls?.map((imageUrl, index) => (
               <div key={index} className="relative w-24 h-24">
-                <img
+                <Image
                   src={imageUrl}
                   alt={`Uploaded ${index}`}
                   className="w-full h-full object-cover rounded-md"
@@ -403,7 +404,7 @@ export default function VirtualBox() {
 
 
           {/* Upload New Images */}
-          <input
+          <Input
   type="file"
   accept="image/*"
   multiple

@@ -20,7 +20,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-
+import { Input } from "@/components/ui/input";
 
 interface Box {
   _id: string;
@@ -307,7 +307,7 @@ export default function HomePage() {
               </DialogTitle>
             </DialogHeader>
             <div className="p-6">
-              <input
+              <Input
                 type="text"
                 value={newBoxName}
                 onChange={(e) => setNewBoxName(e.target.value)}
@@ -388,7 +388,7 @@ export default function HomePage() {
           </DialogTitle>
         </DialogHeader>
         <div className="flex items-center gap-3 p-4">
-          <input
+          <Input
             type="text"
             value={shareableLink || ""}
             readOnly
