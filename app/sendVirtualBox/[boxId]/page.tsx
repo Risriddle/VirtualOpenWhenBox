@@ -77,9 +77,7 @@ export default function SendVirtualBox() {
 
   return (
     // <div className="min-h-screen bg-gradient-to-b from-amber-50 to-amber-50">
-    // <div className="min-h-screen  from-amber-100 to-amber-50 py-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
-  //  <div className="min-h-screen  from-amber-100 to-amber-50 py-8 px-4 sm:px-6 lg:px-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
-<div className="min-h-screen px-4 sm:px-6 lg:px-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat overflow-auto">
+    <div className="min-h-screen  from-amber-100 to-amber-50 py-8 bg-[url('/bg.jpg')] bg-cover bg-center bg-no-repeat">
 
       <AnimatePresence>{showConfetti && <Confetti width={width} height={height} recycle={false} />}</AnimatePresence>
 
@@ -132,12 +130,12 @@ export default function SendVirtualBox() {
                 <Sparkles className="w-4 h-4" />
                 Pick Random Letter
               </Button>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4">
+              
               <EnvelopeList
                 letters={letters.filter(letter => letter.title.toLowerCase().includes(searchQuery.toLowerCase()))}
                 onSelect={handleLetterSelect}
               />
-              </div>
+             
             </>
           )
         )}

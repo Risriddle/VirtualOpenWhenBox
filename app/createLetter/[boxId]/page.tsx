@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import { useParams, useRouter } from "next/navigation"
-import Image from "next/image";
+
 
 
 interface LetterFormData {
@@ -306,7 +306,7 @@ export default function CreateLetterPage() {
                       className="relative transform rotate-1"
                     >
                       <div className="relative rounded-lg overflow-hidden shadow-lg group">
-                        <Image
+                        <img
                           src={image}
                           alt={`Attached ${index + 1}`}
                           className="max-w-full h-48 object-cover opacity-85 mix-blend-multiply"

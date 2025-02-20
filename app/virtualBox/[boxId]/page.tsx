@@ -4,7 +4,6 @@
 import { useState, useEffect } from "react";
 import { useRouter, useParams } from "next/navigation";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -321,7 +320,7 @@ export default function VirtualBox() {
             >
               {viewingLetter.imageUrls.map((imgUrl, index) => (
                 <SwiperSlide key={index}>
-                  <Image
+                  <img
                     src={imgUrl}
                     alt={`Letter Image ${index + 1}`}
                     className="w-full h-[250px] object-contain rounded-lg"
@@ -390,7 +389,7 @@ export default function VirtualBox() {
           <div className="flex flex-wrap gap-2">
             {selectedLetter.imageUrls?.map((imageUrl, index) => (
               <div key={index} className="relative w-24 h-24">
-                <Image
+                <img
                   src={imageUrl}
                   alt={`Uploaded ${index}`}
                   className="w-full h-full object-cover rounded-md"

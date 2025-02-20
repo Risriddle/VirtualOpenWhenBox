@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import ImageSlider from './ImageSlider';
-import Image from "next/image";
 
 
 interface Letter {
@@ -189,11 +188,14 @@ const LetterModal: React.FC<LetterModalProps> = ({ letter, onClose }) => {
   {letter.imageUrls && letter.imageUrls.length > 1 ? (
   <ImageSlider images={letter.imageUrls} />
 ) : letter.imageUrls?.length === 1 ? (
-  <Image
+  <img
     src={letter.imageUrls[0]} 
     alt="Letter Image" 
     className="w-full h-auto rounded-lg shadow-md"
+    //  className="max-w-full max-h-full object-contain rounded-lg shadow-md"
   />
+ 
+
 ) : null}
               <p 
                 className="font-handwriting text-xl text-[#3a2518] leading-relaxed whitespace-pre-wrap tracking-wide italic"
